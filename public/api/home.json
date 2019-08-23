@@ -1,0 +1,56 @@
+{
+	"success": true,
+	"data": {
+		"topicList":[
+			{
+				"id":1,
+				"title":"社会热点",
+				"imgUrl":"//upload.jianshu.io/collections/images/261938/man-hands-reading-boy-large.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+			},
+			{
+				"id": 2,
+				"title": "手手绘",
+				"imgUrl": "//upload.jianshu.io/collections/images/21/20120316041115481.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+			}
+		],
+		"articleList": [{
+			"id": 1,
+			"title": "恋爱=发生关系？",
+			"desc": "前段时间恋爱了，从认识到做他女朋友大概3个月的时间吧，在我看来接触时间有点短确定恋爱关系过于仓促，他却认为老大不小了咱们这速度都过于慢了...",
+			"imgUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=268042761,1199832267&fm=26&gp=0.jpg"
+		}, {
+			"id": 2,
+			"title": "胡歌12年后首谈车祸：既然活下来了，就不能白白活着",
+			"desc": "文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...",
+			"imgUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3139953554,3011511497&fm=26&gp=0.jpg"
+		},
+			{
+				"id": 3,
+				"title": "张莹嫇：清华“自降身段”降60分录取她，现在怎么样了？",
+				"desc": "张莹嫇何许人也？2009年这个说话大声的小吃货，就扬名中华了。她在接受采访时，都拿着吃的东西，十足的吃货一枚。然而就是这枚小吃货，以686分的绝...",
+				"imgUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=508387608,2848974022&fm=26&gp=0.jpg"
+			}, {
+				"id": 4,
+				"title": "结婚后我才明白的事",
+				"desc": "我们正在看电视婆婆敲门进来。问，今天那个厕所的脚印谁的？当然是我的，我老公要纸巾来回好几次，天气一直下雨湿哒哒的，留脚印不是正常的吗？ 原来婆婆...",
+				"imgUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3638429004,1717840478&fm=26&gp=0.jpg"
+			}
+		],
+		"recommendList": [{
+			"id": 1,
+			"imgUrl": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2537725033,443955684&fm=26&gp=0.jpg"
+		}, {
+			"id": 2,
+			"imgUrl": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2936652183,606473819&fm=26&gp=0.jpg"
+		},
+			{
+				"id": 3,
+				"imgUrl": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=395697984,2387201803&fm=26&gp=0.jpg"
+			},
+			{
+				"id": 4,
+				"imgUrl": "http://img2.imgtn.bdimg.com/it/u=40769293,1857400237&fm=26&gp=0.jpg"
+			}
+		]
+	}
+}

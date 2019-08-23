@@ -127,7 +127,7 @@ export const Button = styled.div`
 export const SearchWrapper = styled.div`
     position:relative;
     float:left;
-    .iconfont{
+    .zoom{
         position:absolute;
         right:5px;
         bottom:5px;
@@ -140,4 +140,56 @@ export const SearchWrapper = styled.div`
             color:#fff
         }
     }
+`;
+
+export const SearchInfo = styled.div`
+    position:absolute;
+    left:0px;
+    padding:0 20px;
+    top:59px;
+    width:240px;
+    color:#333333;
+    background-color: #fff;
+    box-shadow:0 0 8px rgb(0,0,0,.2)
+`;
+
+export const SearchInfoTitle = styled.div`
+    margin-top:20px;
+    margin-bottom:15px;
+    line-height:20px;
+    font-size: 14px;
+    color: #969696;
+`;
+
+export const SearchInfoSwitch = styled.a`
+    float:right;
+    font-size:13px;
+    color:#969696;
+    background-color:transparent;
+    cursor:pointer;
+    .spin{
+        display:block;
+        font-size:12px;
+        float:left
+        margin-right:2px;
+        transition:all .2s ease-in;
+        transform-origin:center center;
+    }
+`;
+
+export const SearchInfoItem = styled.a`
+    padding: 0px 6px;
+    font-size: 12px;
+    color: #787878;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display:block;
+    float:left;
+    line-height:20px;
+    margin-right:10px;
+    margin-bottom:15px;
+`;
+
+export const SearchInfoList = styled.div`
+	overflow: hidden;
 `;
