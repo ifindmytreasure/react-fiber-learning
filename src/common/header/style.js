@@ -3,15 +3,14 @@ import logoPic from '../../static/logo.png';
 import jianshudiamond from '../../static/简书砖.png';
 
 export const HeaderWrapper = styled.div`
+    z-index:1;
     position:relative;
     width:1400px;
     height:58px;
     border-bottom: 1px solid #f0f0f0;
 `;
 
-export const Logo = styled.a.attrs({
-    href:"/"
-})`
+export const Logo = styled.div`
     position:absolute;
     top:0;
     left:0;

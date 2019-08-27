@@ -152,3 +152,30 @@ export const WriterInfo = styled.div`
         
     }
 `;
+
+export const LoadMore = styled.div`
+    width:100%;
+    height:40px;
+    line-height:40px;
+    margin:30px 0;
+    background:#a5a5a5;
+    text-align:center;
+    color:#fff;
+    cursor:pointer;
+    border-radius:30px;
+`;
+
+
+export const BackTop = styled.div`
+    position:fixed;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    right:0;
+    text-align:center;
+    cursor:pointer;
+    border:1px solid #ccc;
+    right:50px;
+    bottom:100px;
+    font-size:13px;
+`;

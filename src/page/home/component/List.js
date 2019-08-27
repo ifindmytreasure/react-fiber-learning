@@ -1,16 +1,19 @@
 import React from "react";
-import {ListItem,ListInfo} from '../style';
+import {ListItem,ListInfo,LoadMore} from '../style';
 import {connect} from 'react-redux';
+import {actionCreators} from '../store/index';
+import {Link} from 'react-router-dom';
 
-class List extends React.Component{
+class List extends React.PureComponent{
     render() {
-        const {articleList} = this.props;
+        const {articleList,getMoreList,page} = this.props;
         return (
             <div>
                 {
-                    articleList.map((item) => {
+                    articleList.map((item,index) => {
                         return (
-                            <ListItem key={item.get('id')}>
+                            <Link key={index} to={'/detail/' + item.get('id')}>
+                            <ListItem >
                                 <img className="list-pic"
                                      src={item.get('imgUrl')}
                                      alt="120"/>
@@ -19,9 +22,11 @@ class List extends React.Component{
                                     <p className='desc'>{item.get('desc')}</p>
                                 </ListInfo>
                             </ListItem>
+                            </Link>
                             )
                     })
                 }
+                <LoadMore onClick={() => getMoreList(page)}>阅读更多</LoadMore>
             </div>
 
         )
@@ -29,7 +34,15 @@ class List extends React.Component{
 }
 
 const mapState = (state) => ({
-    articleList:state.getIn(["home","articleList"])
+    articleList:state.getIn(["home","articleList"]),
+    page:state.getIn(['home','articlePage'])
 });
 
-export default connect(mapState,null)(List);
+const mapDispatch = (dispatch) => ({
+    getMoreList(page){
+        const action = actionCreators.getMoreList(page);
+        dispatch(action);
+    }
+});
+
+export default connect(mapState,mapDispatch)(List);

@@ -3,16 +3,22 @@ import Topic from "./component/Topic";
 import Writer from "./component/Writer";
 import List from "./component/List";
 import Recommend from "./component/Recommend";
-import axios from 'axios';
 import {connect} from "react-redux";
 import
 {
     HomeWrapper,
     HomeLeft,
-    HomeRight
+    HomeRight,
+    BackTop
 } from './style';
+import {actionCreators} from "./store";
 
-class Home extends React.Component{
+class Home extends React.PureComponent{
+    handleScrollTop(){
+        window.scrollTo(0,0);
+    }
+
+
     render() {
         return (
             <HomeWrapper>
@@ -25,28 +31,36 @@ class Home extends React.Component{
                     <Recommend></Recommend>
                     <Writer></Writer>
                 </HomeRight>
+                {this.props.showScroll ? <BackTop onClick={this.handleScrollTop}>顶部</BackTop>:null}
             </HomeWrapper>
         )
     }
     componentDidMount() {
-        axios.get('/api/home.json').then((res) => {
-            const result = res.data.data;
-            const action = {
-                type:'change_home_data',
-                topicList:result.topicList,
-                articleList:result.articleList,
-                recommendList:result.recommendList
-            };
-            this.props.changeHomeData(action);
-        }).catch(() => {
-            console.log("未获取到数据");
-        })
-
+        this.props.changeHomeData();
+        this.bindEvents();
+    }
+    bindEvents(){
+        window.addEventListener('scroll',this.props.changeScroll(document.documentElement.scrollTop));
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll',this.props.changeScroll(document.documentElement.scrollTop));
     }
 }
 const mapDispatch = (dispatch) => ({
-    changeHomeData(action){
+    changeHomeData(){
+        const action = actionCreators.getHomeInfo();
         dispatch(action);
+    },
+    changeScroll(scroll){
+        console.log(scroll);
+        if (scroll >=0){
+            dispatch(actionCreators.toggleScroll(true));
+        }else {
+            dispatch(actionCreators.toggleScroll(false));
+        }
     }
 });
-export default connect(null,mapDispatch)(Home);
+const mapState = (state) => ({
+    showScroll:state.getIn(['home','showScroll'])
+});
+export default connect(mapState,mapDispatch)(Home);

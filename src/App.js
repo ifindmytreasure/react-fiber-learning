@@ -4,21 +4,23 @@ import store from './store/index';
 import {Provider} from 'react-redux';
 import {BrowserRouter,Route} from 'react-router-dom';
 import Home from "./page/home";
-import Detail from "./page/detail";
+import Detail from "./page/detail/loadable";
+import Login from './page/login';
+import Write from './page/write';
 
 
 function App() {
   return (
       <Provider store={store}>
-          <div>
-        <Header/>
         <BrowserRouter>
             <div>
+                <Header />
             <Route path="/" exact component={Home}/>
-            <Route path="/detail" exact component={Detail}/>
+            <Route path="/login" exact component={Login}/>
+            <Route path="/write" exact component={Write}/>
+            <Route path="/detail/:id" exact component={Detail}/>
             </div>
         </BrowserRouter>
-          </div>
       </Provider>
 
   );
